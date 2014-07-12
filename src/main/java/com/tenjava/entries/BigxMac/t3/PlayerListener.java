@@ -22,7 +22,7 @@ public class PlayerListener implements Listener
 	@EventHandler
 	public void ifHurtsnonHostile(EntityDamageByEntityEvent event)
 	{
-	if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player)
+	if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player) //Checks if config enables the plugin
 	{
 			if(event.getCause() == DamageCause.ENTITY_ATTACK)
 			{
@@ -58,18 +58,16 @@ public class PlayerListener implements Listener
 	}
 	
 	
-	
-	
 	@EventHandler
 	public void hurtsCreeper(EntityDamageByEntityEvent event){
-		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player && 
+		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player && //Checks if config enables the plugin
 				
-				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER &&
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER && //Checks if mob is Creeper
 				
 				event.getDamage() <= 10)
 		{
 			
-		
+				//Generates a random number
 				Random rand = new Random();
 				int number = 0;
 				for(int i=1;i<=100;++i){
@@ -77,7 +75,7 @@ public class PlayerListener implements Listener
 				number = 1+rand.nextInt(100);
 					
 				
-				 
+				 //Spawns tnt based on chance
 				if(number <= TenJava.instance.getConfig().getInt("CreeperChance")){
 					
 					Location creeper = event.getEntity().getLocation();
@@ -92,14 +90,14 @@ public class PlayerListener implements Listener
 	@EventHandler
 	public void hurtsSkeleton(EntityDamageByEntityEvent event)
 	{
-		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player &&
+		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player && //Checks if config enables the plugin
 				
-				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.SKELETON &&
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.SKELETON && //Checks if mob is Creeper
 				
 				event.getDamage() <= 19) 
 			
 		{
-			
+			//Random number generator
 			Random rand = new Random();
 			int number = 0;
 			for(int i=1;i<=100;++i){

@@ -1,8 +1,9 @@
-BigxMac's Is that a pig?
-==============================
-(C) 2014 All Rights Reserved!
-------------------------------------------------------------------------------
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
+
+Introducing BigxMac's "Think twice about mobs!"
+==============================
+
+------------------------------------------------------------------------------
 
 This is a submission for the 2014 ten.java contest.
 
@@ -28,7 +29,15 @@ Enabled:
     False - Disables plugin
     True - Enables plugin
     
-Chance:
+ZombieChance:
     Can be 0 - 100
-    select the chance of mobs spawning when non-hostile ones are attacked!
-    
+    select the chance of a zombie spawning when non-hostile mobs are attacked! Default 10
+CreeperChance:
+    Can be 0 - 100
+    The chance of creepers spawning tnt (keep the percent low it does kill and is 'very' distructive... May wanna turn off lol D:) Default 1
+SpiderChance:
+    can be 0 - 100
+    The chance of you being caught in a web when attacking spiders.            Default 10
+SkeletonChance:
+    Can be 0 - 100
+    The chance of an arrow spawning on your head when fighting a skeleton.     Default 10 

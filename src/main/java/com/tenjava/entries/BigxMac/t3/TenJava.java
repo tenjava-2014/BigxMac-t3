@@ -13,8 +13,9 @@ public class TenJava extends JavaPlugin
 	{
 		
 		instance = this;
-		
+		// States that the plugin is enabled!
 		getLogger().info("Wild Water has been enabled!");
+		//Sets up the Config
 		getServer().getPluginManager().registerEvents(new PlayerListener(), getInstance());
 		getConfig().addDefault("Enabled", true);
 		getConfig().addDefault("ZombieChance", 10);
@@ -25,22 +26,20 @@ public class TenJava extends JavaPlugin
 		saveConfig();
 	}
 	
-	
+	//Getter for Instance of this Class
 	public static TenJava getInstance() 
 	{
 		
 		return instance;
 	}
 	
-	
-	
-	
+	//Getter for Config
 	public Object config()
 	{
 		return config();
 	}
 
-
+	//States that the plugin has been disabled!
 	@Override
 	public void onDisable()
 	{
