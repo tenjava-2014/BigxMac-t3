@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,7 +19,14 @@ public class PlayerListener implements Listener
 	public void ifHurtsnonHostile(EntityDamageByEntityEvent event){
 		if(event.getDamager() instanceof Player){
 			if(event.getCause() == DamageCause.ENTITY_ATTACK){
-				if(event.getEntityType() == EntityType.PIG){
+				if(
+						event.getEntityType() == EntityType.PIG || 
+						event.getEntityType() == EntityType.COW ||
+						event.getEntityType() == EntityType.SHEEP ||
+						event.getEntityType() == EntityType.BAT ||
+						event.getEntityType() == EntityType.VILLAGER ||
+						event.getEntityType() == EntityType.CHICKEN
+						){
 				Random rand = new Random();
 				int number = 0;
 				for(int i=1;i<=100;++i){
@@ -30,7 +38,8 @@ public class PlayerListener implements Listener
 				if(number <= 100){
 					
 					Location loc = event.getDamager().getLocation();
-					Bukkit.broadcastMessage(loc + "");
+					World world = event.getDamager().getWorld();
+					world.spawnEntity(loc, EntityType.ZOMBIE);
 					
 				}
 			}
