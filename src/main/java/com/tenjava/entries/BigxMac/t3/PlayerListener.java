@@ -1,48 +1,27 @@
 package com.tenjava.entries.BigxMac.t3;
 
-import org.bukkit.Material;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 public class PlayerListener implements Listener 
 {
 
 	@EventHandler
-	public void getArmor(PlayerMoveEvent event)
-	{
-		Player player = event.getPlayer();
-		
-		
-		if(player.getInventory().getBoots() != null){
-			player.sendMessage("not null");
-			if(player.getInventory().getBoots().getType().equals(new ItemStack(Material.LEATHER_BOOTS))){
-				player.sendMessage("leather");
-				
+	public void ifHurtsnonHostile(EntityDamageByEntityEvent event){
+		if(event.getDamager() instanceof Player){
+			if(event.getCause() == DamageCause.ENTITY_ATTACK){
+				Bukkit.broadcastMessage("test");
 				
 			}
 			
-		
-		
-		
-		
 			
 		}
-			
-			
-			
-			
-			
 		
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 }

@@ -61,13 +61,6 @@
 			-->
 		</resources>
 	</build>
-	<name>Armor Fatigue</name>
-	<description>Armor can 
-
--Catch on fire
--Become Soiled
-
--Get knocked off
-
--Fail?</description>
+	<name>Is that a pig?</name>
+	<description>Randomly spawns a hostile mob when  the player kills a non-hostile!</description>
 </project>
