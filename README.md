@@ -1,6 +1,7 @@
 BigxMac's Is that a pig?
 ==============================
-
+(C) 2014 All Rights Reserved!
+------------------------------------------------------------------------------
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
 This is a submission for the 2014 ten.java contest.
@@ -10,29 +11,24 @@ This is a submission for the 2014 ten.java contest.
 - __MC Version:__ 1.7.9 (latest Bukkit beta)
 - __Stream URL:__ https://twitch.tv/Big_Mac_Dev
 
-<!-- put chosen theme above -->
+------------------------------------------------------------------------------
 
----------------------------------------
+INSTALL
+-------
 
-Compilation
------------
-
-- Download & Install [Maven 3](http://maven.apache.org/download.html)
-- Clone the repository: `git clone https://github.com/tenjava/BigxMac-t3`
-- Compile and create the plugin package using Maven: `mvn`
-
-Maven will download all required dependencies and build a ready-for-use plugin package!
-
----------------------------------------
-
-Usage
------
-
-Installation
+1. To install simple save the plugin's jar file into your servers plugin file. By default the plugin.yml will have enabled true.
+2. Start up your bukkit server and enjoy!
 
 
+Config.Yml
+----------
 
-
-Use
-
-
+Enabled:
+    can be true or false.
+    False - Disables plugin
+    True - Enables plugin
+    
+Chance:
+    Can be 0 - 100
+    select the chance of mobs spawning when non-hostile ones are attacked!
+    

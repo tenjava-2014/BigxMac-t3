@@ -6,6 +6,7 @@ public class TenJava extends JavaPlugin {
 	
 	public static TenJava instance;
 	
+	
 	@Override
 	public void onEnable(){
 		
@@ -13,13 +14,22 @@ public class TenJava extends JavaPlugin {
 		
 		getLogger().info("Wild Water has been enabled!");
 		getServer().getPluginManager().registerEvents(new PlayerListener(), getInstance());
-		
+		getConfig().options().copyDefaults(true);
+		saveConfig();
 	}
 	
 	
 	public static TenJava getInstance() {
 		
 		return instance;
+	}
+	
+	
+	
+	
+	public Object config()
+	{
+		return config();
 	}
 
 
@@ -30,6 +40,7 @@ public class TenJava extends JavaPlugin {
 		instance = null;
 		
 	}
+	
 	
 	
 	

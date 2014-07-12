@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.tenjava.entries.BigxMac.t3</groupId> <!-- you're welcome to change this -->
 	<artifactId>BigxMac-t3</artifactId>
-	<version>1.0-EARLY-ALPHA</version>
+	<version>1.0-BETA</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
