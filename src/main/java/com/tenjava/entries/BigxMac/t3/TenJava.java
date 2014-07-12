@@ -17,9 +17,10 @@ public class TenJava extends JavaPlugin
 		getLogger().info("Wild Water has been enabled!");
 		getServer().getPluginManager().registerEvents(new PlayerListener(), getInstance());
 		getConfig().addDefault("Enabled", true);
-		getConfig().addDefault("Chance", 10);
+		getConfig().addDefault("ZombieChance", 10);
 		getConfig().addDefault("CreeperChance", 1);
 		getConfig().addDefault("SkeletonChance", 1);
+		getConfig().addDefault("SpiderChance", 10);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 	}

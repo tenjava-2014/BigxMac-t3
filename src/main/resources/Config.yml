@@ -1,5 +1,7 @@
 ## "Is that a pig?" by Big_Mac_Dev Config ##
 
 Enabled: True
-Chance: 10
-CreeperChance: 100
+ZombieChance: 10
+CreeperChance: 1
+SkeletonChance: 10
+SpiderChance: 10

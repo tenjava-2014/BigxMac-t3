@@ -3,8 +3,8 @@ package com.tenjava.entries.BigxMac.t3;
 import java.util.Random;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -45,7 +45,7 @@ public class PlayerListener implements Listener
 				
 				//Gets config chance and may execute (random)
 				
-				if(number <= TenJava.instance.getConfig().getInt("Chance")){
+				if(number <= TenJava.instance.getConfig().getInt("ZombieChance")){
 					
 					Location loc = event.getDamager().getLocation();
 					World world = event.getDamager().getWorld();
@@ -107,12 +107,45 @@ public class PlayerListener implements Listener
 			number = 1+rand.nextInt(100);
 			}
 			
-			//TenJava.instance.getConfig().getInt("SkeletonChance")
-			if(number <= 100){
+			
+			if(number <= TenJava.instance.getConfig().getInt("SkeletonChance")){
 				
-				Location skeleton = event.getEntity().getLocation();
-				skeleton.add(0, 2, 0);
-				event.getEntity().getLocation().getWorld().spawnArrow(skeleton, event.getEntity().getVelocity(), 1.0F, 1.0F);
+				Location player = event.getDamager().getLocation();
+				player.add(0, 4, 0);
+				event.getDamager().getLocation().getWorld().spawnArrow(player, event.getEntity().getVelocity(), 0F, 0F);
+				
+				
+			}
+			
+		}
+		
+	}
+	
+	@EventHandler
+	public void hurtsSpider(EntityDamageByEntityEvent event)
+	{
+		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player &&
+				
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.SPIDER &&
+				
+				event.getDamage() <= 19) 
+			
+		{
+			
+			Random rand = new Random();
+			int number = 0;
+			for(int i=1;i<=100;++i){
+				
+			number = 1+rand.nextInt(100);
+			}
+			
+			
+			if(number <= TenJava.instance.getConfig().getInt("SpiderChance")){
+				
+				Location player = event.getDamager().getLocation();
+				player.getBlock().setType(Material.WEB);
+				player.add(0,1,0);
+				player.getBlock().setType(Material.WEB);
 				
 				
 			}
