@@ -17,10 +17,12 @@ public class PlayerListener implements Listener
 	
 	
 	@EventHandler
-	public void ifHurtsnonHostile(EntityDamageByEntityEvent event){
+	public void ifHurtsnonHostile(EntityDamageByEntityEvent event)
+	{
 	if(TenJava.getInstance().getConfig().getBoolean("enabled"))
 	{
-		if(event.getDamager() instanceof Player){
+		if(event.getDamager() instanceof Player)	//If attacker is player
+		{
 			if(event.getCause() == DamageCause.ENTITY_ATTACK)
 			{
 				if(
@@ -29,28 +31,36 @@ public class PlayerListener implements Listener
 						event.getEntityType() == EntityType.SHEEP ||
 						event.getEntityType() == EntityType.BAT ||
 						event.getEntityType() == EntityType.CHICKEN
+						
 						){
+				// Random Number Generator
 				Random rand = new Random();
 				int number = 0;
 				for(int i=1;i<=100;++i){
 					
-					number = 1+rand.nextInt(TenJava.instance.getConfig().getInt("Chance"));
+				number = 1+rand.nextInt(100);
 					
 				}
-				//TODO ADD CONFIG THAT ALLOWS CHANGE!
-				if(number <= 100){
+				
+				//Gets config chance and may execute (random)
+				
+				if(number <= TenJava.instance.getConfig().getInt("Chance")){
 					
 					Location loc = event.getDamager().getLocation();
 					World world = event.getDamager().getWorld();
 					world.spawnEntity(loc, EntityType.ZOMBIE);
 					
+						}
+					}
 				}
-			}
-			
-			
+			}	
 		}
-		}
-		
 	}
-	}
+	
+	
+	
+	
+	
+	
+	
 }
