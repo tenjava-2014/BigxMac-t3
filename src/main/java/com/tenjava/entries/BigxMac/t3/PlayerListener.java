@@ -10,7 +10,25 @@ public class PlayerListener implements Listener
 	@EventHandler
 	public void whenRaining(WeatherEvent event)
 	{
+	
 		
+	
+		
+		if(event.getWorld().hasStorm())
+		{
+			
+			event.getWorld().getWeatherDuration();
+			//TODO CHANGE TIME TO MORE TICKS (20tps) 3 secs is for demo!
+			if(event.getWorld().getWeatherDuration() <=  60){
+				
+				
+				
+				
+			}
+			
+			
+			
+		}else{}
 		
 		
 	}

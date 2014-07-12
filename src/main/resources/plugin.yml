@@ -1,3 +1,4 @@
 name: BigxMac-t3
 main: com.tenjava.entries.BigxMac.t3.TenJava
+description: A plugin that allows low lying areas to be flooded when extensive rain is delt!
 version: '${project.version}'
