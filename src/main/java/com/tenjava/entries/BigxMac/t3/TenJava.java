@@ -1,6 +1,5 @@
 package com.tenjava.entries.BigxMac.t3;
 
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TenJava extends JavaPlugin {
@@ -18,7 +17,7 @@ public class TenJava extends JavaPlugin {
 	}
 	
 	
-	private Plugin getInstance() {
+	public static TenJava getInstance() {
 		
 		return instance;
 	}

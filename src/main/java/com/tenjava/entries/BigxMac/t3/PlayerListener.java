@@ -4,24 +4,38 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInventoryEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 
-@SuppressWarnings("deprecation")
 public class PlayerListener implements Listener 
 {
 
 	@EventHandler
-	public void getArmor(PlayerInventoryEvent event)
+	public void getArmor(PlayerMoveEvent event)
 	{
 		Player player = event.getPlayer();
-		ItemStack leatherBoots = new ItemStack(Material.LEATHER_BOOTS);
-		if(player.getInventory().getBoots() != null && player.getInventory().getBoots() == leatherBoots ){
-			player.sendMessage("You are wearing leather boots!");
+		
+		
+		if(player.getInventory().getBoots() != null){
+			player.sendMessage("not null");
+			if(player.getInventory().getBoots().getType().equals(new ItemStack(Material.LEATHER_BOOTS))){
+				player.sendMessage("leather");
+				
+				
+			}
 			
-			
+		
+		
+		
+		
 			
 		}
+			
+			
+			
+			
+			
+		
 		
 	}
 	
