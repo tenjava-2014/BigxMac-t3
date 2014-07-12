@@ -17,7 +17,7 @@ This is a submission for the 2014 ten.java contest.
 INSTALL
 -------
 
-1. To install simple save the plugin's jar file into your servers plugin file. By default the plugin.yml will have enabled true.
+1. To install simply save the plugin's jar file into your servers plugin file. By default the plugin.yml will have enabled true.
 2. Start up your bukkit server and enjoy!
 
 
@@ -32,12 +32,15 @@ Enabled:
 ZombieChance:
     Can be 0 - 100
     select the chance of a zombie spawning when non-hostile mobs are attacked! Default 10
+
 CreeperChance:
     Can be 0 - 100
     The chance of creepers spawning tnt (keep the percent low it does kill and is 'very' distructive... May wanna turn off lol D:) Default 1
+
 SpiderChance:
     can be 0 - 100
     The chance of you being caught in a web when attacking spiders.            Default 10
+
 SkeletonChance:
     Can be 0 - 100
     The chance of an arrow spawning on your head when fighting a skeleton.     Default 10 
