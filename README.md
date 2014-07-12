@@ -29,17 +29,28 @@ Enabled:
     False - Disables plugin
     True - Enables plugin
     
+    
+[![ten.java](http://i327.photobucket.com/albums/k448/Big_Mac_24/2014-07-12_191513_zpsb703d5b4.png)]()   
+    
 ZombieChance:
     Can be 0 - 100 - 
     Select the chance of a zombie spawning when non-hostile mobs are attacked! Default 10
 
+
+[![ten.java](http://i327.photobucket.com/albums/k448/Big_Mac_24/2014-07-12_183807_zps311bb851.png)]()
+(Dont worry I nerfed it a little :3)
 CreeperChance:
     Can be 0 - 100 -
     Changes chance of creepers spawning tnt (keep the percent low it does kill and is 'very' distructive... May wanna turn off lol D: ) - Default Value 1
 
+
+[![ten.java](http://i327.photobucket.com/albums/k448/Big_Mac_24/2014-07-12_183900_zps95874228.png)]()
+
 SpiderChance:
     can be 0 - 100 -
     Changes the chance of you being caught in a web when attacking spiders. - Default Value 10
+
+[![ten.java](http://i327.photobucket.com/albums/k448/Big_Mac_24/2014-07-12_184004_zpsa897dd1c.png)]()
 
 SkeletonChance:
     Can be 0 - 100 - 
