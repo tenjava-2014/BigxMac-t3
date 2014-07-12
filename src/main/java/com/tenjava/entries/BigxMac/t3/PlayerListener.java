@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -63,9 +64,9 @@ public class PlayerListener implements Listener
 	public void hurtsCreeper(EntityDamageByEntityEvent event){
 		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player && 
 				
-				(event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER &&
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER &&
 				
-				event.getDamage() <= 12))
+				event.getDamage() <= 10)
 		{
 			
 		
@@ -81,14 +82,44 @@ public class PlayerListener implements Listener
 					
 					Location creeper = event.getEntity().getLocation();
 					Entity tnt = event.getEntity().getLocation().getWorld().spawnEntity(creeper, EntityType.PRIMED_TNT);
-					((TNTPrimed)tnt).setFuseTicks(0);
+					((TNTPrimed)tnt).setFuseTicks(5);
 					
 				}
 			}
 		}
 	}
 	
-	
+	@EventHandler
+	public void hurtsSkeleton(EntityDamageByEntityEvent event)
+	{
+		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player &&
+				
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.SKELETON &&
+				
+				event.getDamage() <= 19) 
+			
+		{
+			
+			Random rand = new Random();
+			int number = 0;
+			for(int i=1;i<=100;++i){
+				
+			number = 1+rand.nextInt(100);
+			}
+			
+			//TenJava.instance.getConfig().getInt("SkeletonChance")
+			if(number <= 100){
+				
+				Location skeleton = event.getEntity().getLocation();
+				skeleton.add(0, 2, 0);
+				event.getEntity().getLocation().getWorld().spawnArrow(skeleton, event.getEntity().getVelocity(), 1.0F, 1.0F);
+				
+				
+			}
+			
+		}
+		
+	}
 	
 	
 	
