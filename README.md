@@ -17,7 +17,7 @@ This is a submission for the 2014 ten.java contest.
 INSTALL
 -------
 
-1. To install simply save the plugin's jar file into your servers plugin file. By default the plugin.yml will have enabled true.
+1. To install simply save the plugin's jar file into your servers plugin folder. By default the plugin.yml will have enabled set to true.
 2. Start up your bukkit server and enjoy!
 
 
