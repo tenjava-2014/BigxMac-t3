@@ -61,6 +61,13 @@
 			-->
 		</resources>
 	</build>
-	<name>Wild Waters</name>
-	<description>A plugin that allows low lying areas to be flooded when extensive rain is delt!</description>
+	<name>Armor Fatigue</name>
+	<description>Armor can 
+
+-Catch on fire
+-Become Soiled
+
+-Get knocked off
+
+-Fail?</description>
 </project>
