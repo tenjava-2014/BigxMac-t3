@@ -2,6 +2,7 @@ package com.tenjava.entries.BigxMac.t3;
 
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -57,35 +58,29 @@ public class PlayerListener implements Listener
 		}
 	}
 	
-	
 	@EventHandler
-	public void hurtsCreeper(EntityDamageByEntityEvent event){
-		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player && //Checks if config enables the plugin
-				
-				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER && //Checks if mob is Creeper
-				
-				event.getDamage() <= 10)
+	public void hurtsCreeper(EntityDamageByEntityEvent event)
+	{
+		if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player &&
+				event.getCause() == DamageCause.ENTITY_ATTACK && event.getEntityType() == EntityType.CREEPER)
 		{
-			
-				//Generates a random number
-				Random rand = new Random();
-				int number = 0;
-				for(int i=1;i<=100;++i){
-					
+			//Random number generator
+			Random rand = new Random();
+			int number = 0;
+			for(int i=1;i<=100;++i){
 				number = 1+rand.nextInt(100);
-					
+			}
+			
+			if(number <= TenJava.instance.getConfig().getInt("CreeperChance")){
 				
-				 //Spawns tnt based on chance
-				if(number <= TenJava.instance.getConfig().getInt("CreeperChance")){
-					
-					Location creeper = event.getEntity().getLocation();
-					Entity tnt = event.getEntity().getLocation().getWorld().spawnEntity(creeper, EntityType.PRIMED_TNT);
-					((TNTPrimed)tnt).setFuseTicks(5);
-					
-				}
+				Location creeper = event.getEntity().getLocation();
+				Entity tnt = event.getEntity().getLocation().getWorld().spawnEntity(creeper, EntityType.PRIMED_TNT);
+				((TNTPrimed)tnt).setFuseTicks(20);
+			
 			}
 		}
 	}
+	
 	
 	@EventHandler
 	public void hurtsSkeleton(EntityDamageByEntityEvent event)

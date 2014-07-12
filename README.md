@@ -25,22 +25,22 @@ Config.Yml
 ----------
 
 Enabled:
-    can be true or false.
+    Can be true or false. -
     False - Disables plugin
     True - Enables plugin
     
 ZombieChance:
-    Can be 0 - 100
-    select the chance of a zombie spawning when non-hostile mobs are attacked! Default 10
+    Can be 0 - 100 - 
+    Select the chance of a zombie spawning when non-hostile mobs are attacked! Default 10
 
 CreeperChance:
-    Can be 0 - 100
-    The chance of creepers spawning tnt (keep the percent low it does kill and is 'very' distructive... May wanna turn off lol D:) Default 1
+    Can be 0 - 100 -
+    Changes chance of creepers spawning tnt (keep the percent low it does kill and is 'very' distructive... May wanna turn off lol D: ) - Default Value 1
 
 SpiderChance:
-    can be 0 - 100
-    The chance of you being caught in a web when attacking spiders.            Default 10
+    can be 0 - 100 -
+    Changes the chance of you being caught in a web when attacking spiders. - Default Value 10
 
 SkeletonChance:
-    Can be 0 - 100
-    The chance of an arrow spawning on your head when fighting a skeleton.     Default 10 
+    Can be 0 - 100 - 
+    Sets chance of an arrow spawning on your head when fighting a skeleton. - Default Value 10 
