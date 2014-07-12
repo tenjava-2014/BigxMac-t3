@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.EntityDeathEvent;
 
 public class PlayerListener implements Listener 
 {
@@ -19,10 +20,8 @@ public class PlayerListener implements Listener
 	@EventHandler
 	public void ifHurtsnonHostile(EntityDamageByEntityEvent event)
 	{
-	if(TenJava.getInstance().getConfig().getBoolean("enabled"))
+	if(TenJava.getInstance().getConfig().getBoolean("enabled") && event.getDamager() instanceof Player)
 	{
-		if(event.getDamager() instanceof Player)	//If attacker is player
-		{
 			if(event.getCause() == DamageCause.ENTITY_ATTACK)
 			{
 				if(
@@ -53,13 +52,37 @@ public class PlayerListener implements Listener
 						}
 					}
 				}
-			}	
+				
 		}
 	}
 	
-	
-	
-	
+	public void onCreeperkill(EntityDeathEvent event)
+	{
+		if(TenJava.getInstance().getConfig().getBoolean("enabled"))
+		{
+			if(event.getEntityType() == EntityType.CREEPER)
+			{
+				
+				Random rand = new Random();
+				int number = 0;
+				for(int i=1;i<=100;++i){
+					
+				number = 1+rand.nextInt(100);
+				if(number <= TenJava.instance.getConfig().getInt("CreeperChance")){
+					
+					
+					
+						}
+				}
+				
+				
+			}
+			
+			
+		}
+		
+		
+	}
 	
 	
 	

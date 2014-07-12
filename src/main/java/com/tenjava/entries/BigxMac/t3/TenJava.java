@@ -18,6 +18,7 @@ public class TenJava extends JavaPlugin
 		getServer().getPluginManager().registerEvents(new PlayerListener(), getInstance());
 		getConfig().addDefault("Enabled", true);
 		getConfig().addDefault("Chance", 5);
+		getConfig().addDefault("CreeperChance", 5);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 	}
